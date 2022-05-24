@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-./grs/squid/buildSquid.sh
-
 sudo docker run -d --net client_net --ip \
 10.0.1.253 --cap-add=NET_ADMIN --name squid \
 squid

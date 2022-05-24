@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
+DNS=/home/theuser/grs/dockers/dns
+
 docker run -d --name=dns \
+--volume $DNS/db.myorg.net:/etc/bind/db.myorg.net \
+--volume $DNS/named.conf.local:/etc/bind/named.conf.local \
 --volume /var/cache/bind \
 --volume /var/lib/bind \
 --rm --net dmz_net --ip 172.16.123.129 \

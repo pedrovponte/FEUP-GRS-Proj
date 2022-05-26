@@ -11,3 +11,8 @@ sudo docker exec client$1 /bin/bash -c \
 
 sudo docker exec client$1 /bin/bash -c \
 'ip r a default via 10.0.1.254'
+
+sudo docker exec client$1 /bin/bash -c \
+'echo "search netlab.fe.up.pt
+nameserver 10.0.1.3
+options edns0 trust-ad ndots:0" > /etc/resolv.conf ' 

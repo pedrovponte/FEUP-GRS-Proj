@@ -9,4 +9,14 @@ docker run --rm -v $PWD:/etc/openvpn -it kylemanna/openvpn easyrsa build-client-
 # Copy client certificate to host from container
 docker run --rm -v $PWD:/etc/openvpn kylemanna/openvpn ovpn_getclient usr1 > usr1.ovpn
 #Start OpenVPN container 
-docker run --name openvpn -v $PWD:/etc/openvpn -d ----net dmz_net --ip 172.16.123.132 --cap-add=NET_ADMIN --restart always kylemanna/openvpn
+docker run --name openvpn -v $PWD:/etc/openvpn -d --net dmz_net --ip 172.16.123.132 --cap-add=NET_ADMIN --restart always kylemanna/openvpn
+
+
+# Routing for vpn
+sudo docker exec www /bin/bash -c \
+'ip r del default'
+
+sudo docker exec www /bin/bash -c \
+'ip r a default via 172.16.123.139'
+sudo docker exec www /bin/bash -c \
+'ip r a 10.0.0.0/8 via 172.16.123.142'

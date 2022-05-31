@@ -17,6 +17,7 @@ sudo docker exec edgerouter /bin/bash -c \
 'iptables -F -t nat
 iptables -F -t filter
 iptables -t nat -A POSTROUTING -s 10.0.0.0/8 -o eth1 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 172.16.123.128/28 -o eth1 -j MASQUERADE
 iptables -P FORWARD DROP
 iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A FORWARD -m state --state NEW -i eth0 -j ACCEPT

@@ -10,4 +10,4 @@ sudo docker exec loadBalancer /bin/bash -c \
 'ip r del default via 10.0.2.1'
 
 sudo docker exec loadBalancer /bin/bash -c \
-'ip r a 10.0.1.0/24 via 10.0.2.254'
+'ip r a default via 10.0.2.254'

@@ -17,3 +17,4 @@ $LAUNCHERS/edgeRouter.sh
 $LAUNCHERS/www.sh
 $LAUNCHERS/mail.sh
 $LAUNCHERS/dns.sh
+$LAUNCHERS/vpn.sh

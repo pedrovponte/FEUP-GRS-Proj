@@ -2,7 +2,7 @@
 
 for i in range {1..5}
 do
-    sudo docker build --tag squid:latest ~/grs/squid
+    sudo docker build --tag squid:latest ~/grs/dockers/squid
     if [ $? -eq 0 ] 
     then
         exit 0

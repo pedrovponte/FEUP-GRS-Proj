@@ -2,7 +2,7 @@
 
 for i in range {1..5}
 do
-    sudo docker build --tag netubuntu:latest ~/grs/netubuntu
+    sudo docker build --tag netubuntu:latest ~/grs/dockers/netubuntu
     if [ $? -eq 0 ] 
     then
         exit 0

@@ -2,7 +2,7 @@
 
 for i in range {1..5}
 do
-    sudo docker build --tag server:latest ~/grs/server
+    sudo docker build --tag server:latest ~/grs/server/server
     if [ $? -eq 0 ] 
     then
         exit 0

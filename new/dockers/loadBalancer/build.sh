@@ -2,7 +2,7 @@
 
 for i in range {1..5}
 do
-    sudo docker build --tag loadbalancer:latest ~/grs/loadBalancer
+    sudo docker build --tag loadbalancer:latest ~/grs/dockers/loadBalancer
     if [ $? -eq 0 ] 
     then
         exit 0

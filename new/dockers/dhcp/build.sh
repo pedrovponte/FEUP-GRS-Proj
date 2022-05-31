@@ -2,7 +2,7 @@
 
 for i in range {1..5}
 do
-    sudo docker build --tag dhcp:latest ~/grs/dhcp
+    sudo docker build --tag dhcp:latest ~/grs/dockers/dhcp
     if [ $? -eq 0 ] 
     then
         exit 0

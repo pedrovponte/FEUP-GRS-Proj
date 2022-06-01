@@ -9,3 +9,8 @@ sudo docker exec external_host /bin/bash -c \
 nameserver 172.16.123.129
 nameserver 8.8.8.8
 options edns0 trust-ad ndots:0" > /etc/resolv.conf ' 
+sudo docker exec external_host /bin/bash -c \
+'mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+chmod 600 /dev/net/tun
+/etc/init.d/openvpn restart' 

@@ -4,7 +4,7 @@
 docker run --rm -v $PWD:/etc/openvpn kylemanna/openvpn ovpn_genconfig -u udp://172.16.123.132:1194
 
 #Change openvpn configuration
-docker run --rm -v $PWD:/etc/openvpn kylemanna/openvpn /bin/bash -c "echo 'server 192.168.255.0 255.255.255.0
+docker run --rm -v $PWD:/etc/openvpn kylemanna/openvpn /bin/bash -c "echo 'server 192.168.255.0 255.255.255.240
 verb 3
 key /etc/openvpn/pki/private/172.16.123.132.key
 ca /etc/openvpn/pki/ca.crt
@@ -27,7 +27,7 @@ group nogroup
 comp-lzo no
 
 ### Route Configurations Below
-route 10.0.1.0 255.255.255.0
+route 10.0.0.0 255.0.0.0
 
 ### Push Configurations Below
 push \"block-outside-dns\"
@@ -52,6 +52,8 @@ docker run --name openvpn -v $PWD:/etc/openvpn -d --net dmz_net --ip 172.16.123.
 # Routing for vpn
 sudo docker exec openvpn /bin/bash -c \
 'ip r del default'
+sudo docker exec openvpn /bin/bash -c \
+'ip r del 10.0.0.0/8'
 
 sudo docker exec openvpn /bin/bash -c \
 'ip r a default via 172.16.123.139'

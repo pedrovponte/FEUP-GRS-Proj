@@ -14,7 +14,7 @@ sudo iptables -t nat -A POSTROUTING -s 172.16.123.128/28 -o \
 eth4 -j MASQUERADE
 
 $LAUNCHERS/edgeRouter.sh
-$LAUNCHERS/www.sh
+$LAUNCHERS/loadBalancer.sh
 $LAUNCHERS/mail.sh
 $LAUNCHERS/dns.sh
 $LAUNCHERS/vpn.sh

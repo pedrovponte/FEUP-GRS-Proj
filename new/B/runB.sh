@@ -37,3 +37,6 @@ echo '------CLIENT_NET---------------'
 $HOME/grs/B/client_net.sh
 
 $HOME/grs/launchers/router.sh
+
+echo '------RUNNING TESTS------------'
+$HOME/grs/tests/B.sh

@@ -2,11 +2,5 @@
 
 DOCKERS=/home/theuser/grs/dockers
 
-# Builds all the dockers that will be needed
-$DOCKERS/dhcp/build.sh
-$DOCKERS/dns/build.sh
-$DOCKERS/dnloadBalancer/build.sh
-$DOCKERS/nagios/build.sh
-$DOCKERS/netubuntu/build.sh
-$DOCKERS/server/build.sh
-$DOCKERS/squid/build.sh
+# Executes all the build.sh in this folder
+find $DOCKERS -iname "build.sh" | bash
